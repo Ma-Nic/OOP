@@ -1,3 +1,9 @@
+/* Matt Nicol
+ * Pontoon
+ * 26-09-18
+ * Eclipse v4.9.0
+ * cv1.0 */
+
 package Pontoon;
 
 import java.util.Scanner;
@@ -8,6 +14,7 @@ public class Game {
 		
 	Scanner kboard = new Scanner(System.in);
 	
+	//Declare variables
 	String choice;
 	int card1 = 0;
 	int card2 = 0;
@@ -18,6 +25,7 @@ public class Game {
 	int cardCount = 3;
 	int cDrawn[] = new int [10];
 	
+	//Set variables
 	house = HouseCard.getHouseCard(houseMin);
 	cDrawn[0] = house;
 	card1 = RandomNumber.getRandomNumber();
@@ -32,6 +40,8 @@ public class Game {
 	System.out.println("Do you wish to draw another card y/n?");
 	choice = kboard.next();
 	
+		
+	//Continue play as long as player chooses y
 	while (choice.equalsIgnoreCase("y"))
 		{
 		newCard = RandomNumber.getRandomNumber();
@@ -43,6 +53,8 @@ public class Game {
 		System.out.println("Do you wish to draw another card y/n?");
 		choice = kboard.next();
 		}
+		
+	//Check player total and determine result
 	if (CardTotal.busted(cTotal) == true)
 	{
 		System.out.println("You busted out!");
